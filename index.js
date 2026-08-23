@@ -7,7 +7,10 @@ app.use(express.json());
 
 // Inicializamos WhatsApp
 const client = new Client({
-    authStrategy: new LocalAuth(),
+    authStrategy: new LocalAuth({
+        clientId: "gestion-piso-1",
+        dataPath: ".wwebjs_auth"
+    }),
     puppeteer: {
         headless: true,
         args: [
